@@ -73,3 +73,117 @@ button{
 	width: 20%;
 	/* border: 1px solid blue; */
 }
+
+.pr-link{
+	margin: auto;
+}
+
+.p-producto{
+	display: flex;
+	flex-direction: row;
+	border-radius: 5px;
+  	box-shadow: 1px 5px 10px hsl(240 25% 25% / 0.1);
+	padding: 0.5em;
+	margin-top: 0.5em;
+}
+
+.p-group{
+	text-align: left;
+	/* border: 1px solid yellow; */
+	width: 60%;
+}
+.p-img{
+	width: 40%;
+}
+
+.p-title{
+	font-size: 1.2rem;
+	width: 40%;
+	color: gray;
+	/* border: 1px solid green; */
+}
+.p-price{
+	margin-top: 1em;
+	font-size: 1rem;
+	color: gray;
+	width: 30%;
+	/* border: 1px solid red; */
+
+}
+.p-total{
+	font-size: 1.2rem;
+	color: gray;
+	text-align: center;
+	margin: auto;
+	width: 30%;
+	/* border: 1px solid blue; */
+}
+
+.p-det{
+	font-size: 0.7rem;
+	color: gray;
+	/* border: 1px solid blue; */
+}
+
+.pedido{
+	width: 25rem;
+}
+
+
+@media screen and (max-width: 580px) {
+	.products{
+		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+		width: 85%;
+	}
+    .product{
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		/* border: 1px solid red; */
+		width: 100%;
+	}
+	.product--img{
+		margin: auto;
+		width: 50%;
+		/* border: 1px solid blue; */
+	}
+	
+	.product--desc{
+		width: 80%;
+		margin: auto;
+		/* border: 1px solid blue; */
+	}
+	
+	.produc--title{
+		/* border: 1px solid blue; */
+	}
+	
+	.product--add{
+		margin: auto;
+		width: 70%;
+		/* border: 1px solid red; */
+	}
+	
+	.add-number{
+		width: 20%;
+	}
+	
+	.product--det{
+		/* border: 1px solid blue; */
+	}
+	.product--price{
+		color: gray;
+		margin: auto;
+		width: 20%;
+		/* border: 1px solid blue; */
+	}
+
+	.dropdown-menu{background-color: rgb(180, 179, 179);}
+}
+
+.login{
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	margin: auto;
+	width: 80%;
+	/* border: 1px solid red; */
+}
