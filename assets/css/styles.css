@@ -136,6 +136,9 @@ button{
 
 
 @media screen and (max-width: 580px) {
+	.pedido{
+		width: 100%;
+	}
 	.products{
 		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 		width: 85%;
