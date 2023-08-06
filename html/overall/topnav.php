@@ -30,20 +30,20 @@
                 </form>
 
                 <ul class="navbar-nav">
-                    <li class="nav-item dropdown ">
+                    
                         <!-- <a class="nav-link mbr-buttons__link" aria-haspopup="true" aria-expanded="false" data-target="#Login">Iniciar sesion</a> -->
 
                         <?php
                             if(!isset($_SESSION['app_id'])){
-                                echo '<a class="nav-link mbr-buttons__link btn" data-toggle="modal" data-target="#Login">Iniciar sesion</a>';
+                                echo '<li class="nav-item dropdown "><a class="nav-link mbr-buttons__link btn" data-toggle="modal" data-target="#Login">Iniciar sesion</a></li>';
                             } else {
-                                echo '<a class="mbr-buttons__btn btn btn-primary" href="?view=logout">SALIR</a>';
+                                echo '<li class="nav-item dropdown"><a href="?view=logout" class="nav-link mbr-buttons__link btn">'. strtoupper($_cliente[$_SESSION['app_id']]['usuario']) .'</a></li>';
                             }
                         ?>
 
                        
                         
-                    </li>                    
+                                        
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pedido (4)</a>
                         <div class="dropdown-menu dropdown-menu-right pedido" aria-labelledby="dropdown07">

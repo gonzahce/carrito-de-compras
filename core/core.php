@@ -21,6 +21,9 @@ define('APP_URL','http://localhost/carrito-de-compras/');
 #Estructura
 require('core/models/class.Conexion.php');
 require('core/bin/functions/Encrypt.php');
+require('core/bin/functions/Cliente.php');
+
+$_cliente = Cliente();
 
 
 
