@@ -14,6 +14,9 @@ if($_POST) {
     case 'lostpass':
       require('core/bin/ajax/goLostpass.php');
     break;
+    case 'add':
+      require('core/bin/ajax/goAgregar.php');
+    break;
     default:
       header('location: index.php');
     break;

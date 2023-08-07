@@ -41,14 +41,52 @@
                             }
                         ?>
 
+
+
                        
                         
                                         
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pedido (4)</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pedido</a>
                         <div class="dropdown-menu dropdown-menu-right pedido" aria-labelledby="dropdown07">
                             <div class="p-productos">
-                                <div class="p-producto">
+
+                            <?php
+
+if(!empty($_SESSION['cart'])){
+    foreach($_SESSION['cart'] as $key => $value){
+        echo '
+<div class="p-producto">
+    <img src="views/app/img/'.$value['wp-img'].'" alt="" class="p-img">
+    <div class="p-group">
+        <span class="p-title">'.$value['wp-nombre'].'</span>
+        <p class="p-desc">'.$value['wp-desc'].'</p>
+        <p class="p-price">'.$value['wp-precio'] .'$ * '.$value['cantidad'].'</p>
+        <a href="index.php?action=remove&id='.$value['id_producto'].'">
+        <button type="submit" class="btn">Remover</button>
+                    </a>
+        
+    </div>                                    
+</div>
+';
+
+    }
+
+    $total = $total + $value['cantidad'] * $value['wp-precio'];
+    echo '<tr>
+    <td>'.number_format($total,2).'</td>
+    <td><a href="?action=clearall">
+    <button>Clear All</button>
+    </a></td>
+    <td><a href="?action=comprar">
+    <button>Comprar</button>
+    </a></td>
+</tr></table></br>';
+}
+
+?> 
+
+                                <!-- <div class="p-producto">
                                     <img src="views/app/img/samsung.jpg" alt="" class="p-img">
                                     <div class="p-group">
                                         <span class="p-title">Samgung A20</span>
@@ -56,39 +94,11 @@
                                         <p class="p-price"> 420$</p>
                                         <button type="submit" class="btn">Remover</button>
                                     </div>                                    
-                                </div>
+                                </div> -->
 
-                                <div class="p-producto">
-                                    <img src="views/app/img/iphone.png" alt="" class="p-img">
-                                    <div class="p-group">
-                                        <span class="p-title">Iphone 14</span>
-                                        <p class="p-det">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, alias!</p>
-                                        <p class="p-price"> 289$</p>
-                                        <button type="submit" class="btn">Remover</button>
-                                    </div>                                    
-                                </div>
+                                
 
-                                <div class="p-producto">
-                                    <img src="views/app/img/laptop.png" alt="" class="p-img">
-                                    <div class="p-group">
-                                        <span class="p-title">Laptop</span>
-                                        <p class="p-det">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, alias!</p>
-                                        <p class="p-price"> 140$</p>
-                                        <button type="submit" class="btn">Remover</button>
-                                    </div>                                    
-                                </div>
-
-                                <div class="p-producto">
-                                    <img src="views/app/img/iphone.png" alt="" class="p-img">
-                                    <div class="p-group">
-                                        <span class="p-title">Iphone 14</span>
-                                        <p class="p-det">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, alias!</p>
-                                        <p class="p-price"> 160$</p>
-                                        <button type="submit" class="btn">Remover</button>
-                                    </div>                                    
-                                </div>
-
-                                <footer class="p-total btn">Total: 1250$<button>Comprar</button></footer>                                
+                                                                
                             </div>
                         </div>
                     </li>

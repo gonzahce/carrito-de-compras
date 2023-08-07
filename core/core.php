@@ -22,6 +22,7 @@ define('APP_URL','http://localhost/carrito-de-compras/');
 require('core/models/class.Conexion.php');
 require('core/bin/functions/Encrypt.php');
 require('core/bin/functions/Cliente.php');
+require('core/bin/ajax/goAgregar.php');
 
 $_cliente = Cliente();
 

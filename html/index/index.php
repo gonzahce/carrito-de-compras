@@ -25,24 +25,34 @@
 
   ?>
 
-<?php
-  while($fila = mysqli_fetch_assoc($sql)){
-    echo '<div class="product">
-    <img src="views/app/img/'.$fila['wp-img'].'" alt="Img" class="product--img">
-    <div class="product--desc">
-        <span class="produc--title"><a href="#" class="p-link">'.$fila['wp-nombre'].'</a></span>
-        <p class="product--det">'.$fila['wp-desc'].'</p>
-    </div>
-    
-    <div class="product--add">
-        <input type="number" placeholder="1" class="add-number">
-        <button class="btn">Añadir</button>
-    </div>
-    <div class="product--price">Precio: $'.$fila['wp-precio'].'</div>
-</div>';
-  }
-?>
 
+
+<?php
+        
+        while($row = mysqli_fetch_array($sql)){
+            echo '<form method="POST" action="index.php?id='.$row['id_producto'].'">
+            <div class="product">
+        <img src="views/app/img/'.$row['wp-img'].'" alt="Img" class="product--img">
+        <div class="product--desc">
+            <span class="produc--title"><a href="index.php?id='.$row['id_producto'].'" class="p-link">'.$row['wp-nombre'].'</a></span>
+            <p class="product--det">'.$row['wp-desc'].'</p>
+        </div>
+        
+        <div class="product--add">
+            <input type="number" name="cantidad" value="1" class="add-number">
+            <input type="hidden" name="id_pructo" value="'.$row['id_producto'].'">
+            <input type="hidden" name="wp-nombre" value="'.$row['wp-nombre'].'">
+            <input type="hidden" name="wp-precio" value="'.$row['wp-precio'].'">
+            <input type="hidden" name="wp-desc" value="'.$row['wp-desc'].'">
+            <input type="hidden" name="wp-img" value="'.$row['wp-img'].'">
+            <input type="submit" class="btn" name="add_to_cart" value="Add to cart">          
+        </div>
+        <div class="product--price">Precio: $'.number_format($row['wp-precio'],2).'</div>
+    </div>
+        </form>';
+        }
+
+?>
 
 <nav aria-label="Page navigation example">
   <ul class="pagination">
